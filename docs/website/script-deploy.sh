@@ -1,10 +1,10 @@
 #!/usr/bin/env sh
 
 # update changelog
-./script-update-changelog.js
+# ./script-update-changelog.js
 
 # build
 npm run build
 
 # deploy
-cd build
+GIT_USER=magicdawn npm run publish-gh-pages
