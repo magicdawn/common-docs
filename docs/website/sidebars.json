@@ -3,6 +3,6 @@
     "Docs": ["index"]
   },
   "Koa": {
-    "router related": ["impress-router"]
+    "koa router related": ["impress-router"]
   }
 }

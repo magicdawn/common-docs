@@ -43,7 +43,7 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     {doc: 'index', label: 'Docs'},
-    // {doc: 'changelog', label: 'CHANGELOG'},
+    {doc: 'impress-router', label: 'Koa related'},
     // {page: 'help', label: 'Help'},
     // {blog: true, label: 'Blog'},
   ],
