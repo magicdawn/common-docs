@@ -149,6 +149,10 @@ userRouter.get('/:field', ctx => {
 
 so I'm porting it to koa
 
+## Changelog
+
+[CHANGELOG.md](https://github.com/magicdawn/impress-router/blob/master/CHANGELOG.md)
+
 ## License
 
 the MIT License http://magicdawn.mit-license.org
