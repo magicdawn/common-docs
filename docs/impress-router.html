@@ -1,0 +1,173 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>impress-router · common-docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;blockquote&gt;
+&lt;p&gt;express style router for koa v2&lt;/p&gt;
+&lt;/blockquote&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="impress-router · common-docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://magicdawn.github.io/common-docs/index.html"/><meta property="og:description" content="&lt;blockquote&gt;
+&lt;p&gt;express style router for koa v2&lt;/p&gt;
+&lt;/blockquote&gt;
+"/><meta property="og:image" content="https://magicdawn.github.io/common-docs/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://magicdawn.github.io/common-docs/img/docusaurus.png"/><link rel="shortcut icon" href="/common-docs/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.0/dist/clipboard.min.js"></script><script type="text/javascript" src="/common-docs/js/code-block-buttons.js"></script><link rel="stylesheet" href="/common-docs/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/common-docs/"><img class="logo" src="/common-docs/img/docusaurus.svg" alt="common-docs"/><h2 class="headerTitleWithLogo">common-docs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/common-docs/docs/" target="_self">Docs</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>router related</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">router related</h3><ul><li class="navListItem navListItemActive"><a class="navItem" href="/common-docs/docs/impress-router">impress-router</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">impress-router</h1></header><article><div><span><blockquote>
+<p>express style router for koa v2</p>
+</blockquote>
+<div class="badges">
+<p><a href="https://travis-ci.org/magicdawn/impress-router"><img src="https://img.shields.io/travis/magicdawn/express-modern.svg?style=flat-square" alt="Build Status"></a>
+<a href="https://codecov.io/gh/magicdawn/impress-router"><img src="https://img.shields.io/codecov/c/github/magicdawn/impress-router.svg?style=flat-square" alt="Coverage Status"></a>
+<a href="https://www.npmjs.com/package/impress-router"><img src="https://img.shields.io/node/v/impress-router.svg?style=flat-square" alt="node version"></a>
+<a href="https://www.npmjs.com/package/impress-router"><img src="https://img.shields.io/npm/v/impress-router.svg?style=flat-square" alt="npm version"></a>
+<a href="https://www.npmjs.com/package/impress-router"><img src="https://img.shields.io/npm/dm/impress-router.svg?style=flat-square" alt="npm downloads"></a>
+<a href="http://magicdawn.mit-license.org"><img src="https://img.shields.io/npm/l/impress-router.svg?style=flat-square" alt="npm license"></a>
+<a href="https://greenkeeper.io/"><img src="https://badges.greenkeeper.io/magicdawn/impress-router.svg" alt="Greenkeeper badge"></a></p>
+</div>
+<h2><a class="anchor" aria-hidden="true" id="install"></a><a href="#install" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install</h2>
+<pre><code class="hljs css language-sh">npm i impress-router -S
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="basic-usage"></a><a href="#basic-usage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>basic usage</h2>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> App = <span class="hljs-built_in">require</span>(<span class="hljs-string">'koa'</span>)
+<span class="hljs-keyword">const</span> Router = <span class="hljs-built_in">require</span>(<span class="hljs-string">'impress-router'</span>)
+
+<span class="hljs-keyword">const</span> app = <span class="hljs-keyword">new</span> App()
+<span class="hljs-keyword">const</span> router = <span class="hljs-keyword">new</span> Router()
+app.use(router)
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="new-routeropts"></a><a href="#new-routeropts" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>new Router(opts)</code></h2>
+<p>opts</p>
+<table>
+<thead>
+<tr><th>key</th><th>type</th><th>default</th><th>description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>strict</code></td><td><code>Boolean</code></td><td><code>false</code></td><td>when <code>false</code> the trailing <code>/</code> is optional`, see <a href="https://github.com/pillarjs/path-to-regexp">path-to-regexp</a> doc</td></tr>
+<tr><td><code>sensitive</code></td><td><code>Boolean</code></td><td><code>false</code></td><td>when <code>false</code>, case is not<code>sensitive</code>, see <a href="https://github.com/pillarjs/path-to-regexp">path-to-regexp</a> doc</td></tr>
+<tr><td><code>mergeParams</code></td><td><code>Boolean</code></td><td><code>true</code></td><td>when <code>true</code>, merge params when we have nested routers</td></tr>
+<tr><td><code>useThis</code></td><td><code>Boolean</code></td><td><code>true</code></td><td>when <code>true</code>, the handler<code>this</code>equal to<code>ctx</code>, like koa v1 does</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="routeruse-path-middleware"></a><a href="#routeruse-path-middleware" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>router.use([path], middleware)</code></h2>
+<blockquote>
+<p>middleware can be mount on path, or on the root path <code>/</code></p>
+</blockquote>
+<h4><a class="anchor" aria-hidden="true" id="arguments"></a><a href="#arguments" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>arguments</h4>
+<table>
+<thead>
+<tr><th>name</th><th>type</th><th>required</th><th>default</th><th>description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>path</code></td><td><code>String</code></td><td><code>false</code></td><td><code>'/'</code></td><td>the mount path</td></tr>
+<tr><td><code>middleware</code></td><td><code>Function</code> / <code>Array&lt;Function&gt;</code></td><td><code>true</code></td><td></td><td>the handler</td></tr>
+</tbody>
+</table>
+<blockquote>
+<p>in the handler, <code>ctx</code> will have some extra prop attached</p>
+<ul>
+<li><code>ctx.basePath</code> the mount path</li>
+<li><code>ctx.path</code> the path with <code>ctx.basePath</code> trimed</li>
+<li><code>ctx.originalPath</code> the untrimed path</li>
+</ul>
+<p>It's kind like Express <code>req.baseUrl</code> / <code>req.originalUrl</code> does</p>
+</blockquote>
+<p>for Example</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> App = <span class="hljs-built_in">require</span>(<span class="hljs-string">'koa'</span>)
+<span class="hljs-keyword">const</span> Router = <span class="hljs-built_in">require</span>(<span class="hljs-string">'impress-router'</span>)
+
+<span class="hljs-keyword">const</span> app = <span class="hljs-keyword">new</span> App()
+<span class="hljs-keyword">const</span> router = <span class="hljs-keyword">new</span> Router()
+app.use(router)
+
+router.use(<span class="hljs-string">'/public'</span>, (ctx, next) {
+  <span class="hljs-comment">// when requesting `/public/js/foo.js`</span>
+  ctx.path <span class="hljs-comment">// `/js/foo.js`</span>
+  ctx.basePath <span class="hljs-comment">// `/public`</span>
+  ctx.originalPath <span class="hljs-comment">// `/public/js/foo.js`</span>
+  <span class="hljs-keyword">return</span> next()
+})
+</code></pre>
+<blockquote>
+<p>when we request <code>/public/js/foo.js</code></p>
+<ul>
+<li><code>ctx.path</code> will be <code>/js/foo.js</code></li>
+<li><code>ctx.basePath</code> will be <code>/public</code></li>
+<li><code>ctx.originalPath</code> will be <code>/public/js/foo.js</code></li>
+</ul>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="routermethodpath-handler"></a><a href="#routermethodpath-handler" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>router.method(path, handler)</code></h2>
+<ul>
+<li><code>get</code> / <code>post</code> / <code>...</code> methods exposed by <code>methods</code> module are supported</li>
+<li><code>all</code> method supported, via <code>router.all(path,fn)</code></li>
+<li>auto <code>OPTIONS</code> response, the router automatic build the <code>Allow</code> response</li>
+<li>auto <code>HEAD</code> response</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> app = <span class="hljs-keyword">new</span> (<span class="hljs-built_in">require</span>(<span class="hljs-string">'koa'</span>))()
+<span class="hljs-keyword">const</span> router = <span class="hljs-keyword">new</span> (<span class="hljs-built_in">require</span>(<span class="hljs-string">'impress-router'</span>))()
+app.use(router)
+
+router.get(<span class="hljs-string">'/hello'</span>, ctx =&gt; {
+  ctx.body = <span class="hljs-string">'world'</span>
+})
+
+router.all(<span class="hljs-string">'/foo'</span>, ctx =&gt; {
+  ctx.body = <span class="hljs-string">'bar'</span>
+})
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="ctxparams"></a><a href="#ctxparams" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>ctx.params</code></h3>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> app = <span class="hljs-keyword">new</span> (<span class="hljs-built_in">require</span>(<span class="hljs-string">'koa'</span>))()
+<span class="hljs-keyword">const</span> Router = <span class="hljs-built_in">require</span>(<span class="hljs-string">'impress-router'</span>)
+<span class="hljs-keyword">const</span> router = <span class="hljs-keyword">new</span> Router()
+app.use(router)
+
+<span class="hljs-keyword">const</span> userRouter = <span class="hljs-keyword">new</span> Router()
+router.use(<span class="hljs-string">'/user/:uid'</span>, userRouter)
+
+userRouter.get(<span class="hljs-string">'/:field'</span>, ctx =&gt; {
+  ctx.body = {
+    <span class="hljs-attr">uid</span>: ctx.params.uid,
+    <span class="hljs-attr">field</span>: ctx.params.field,
+  }
+})
+
+<span class="hljs-comment">// GET /user/magicdawn/name</span>
+<span class="hljs-comment">// =&gt;</span>
+<span class="hljs-comment">// { uid: 'magicdawn', field: 'name' }</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="routeraugmentappapp"></a><a href="#routeraugmentappapp" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>router.augmentApp(app)</h2>
+<blockquote>
+<p>this method will augment the koa app instance, will</p>
+</blockquote>
+<ul>
+<li>add <code>app.use(path, middleware)</code> support, the original <code>app.use</code> lack support of <code>path</code></li>
+<li>add <code>app.get</code> / <code>app.post</code> support</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="why"></a><a href="#why" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Why</h2>
+<ul>
+<li>express.Router is very nice</li>
+<li>koa-router package is not very friendly, especially on middleware mount on path</li>
+</ul>
+<p>so I'm porting it to koa</p>
+<h2><a class="anchor" aria-hidden="true" id="license"></a><a href="#license" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>License</h2>
+<p>the MIT License <a href="http://magicdawn.mit-license.org">http://magicdawn.mit-license.org</a></p>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#install">Install</a></li><li><a href="#basic-usage">basic usage</a></li><li><a href="#new-routeropts"><code>new Router(opts)</code></a></li><li><a href="#routeruse-path-middleware"><code>router.use([path], middleware)</code></a></li><li><a href="#routermethodpath-handler"><code>router.method(path, handler)</code></a><ul class="toc-headings"><li><a href="#ctxparams"><code>ctx.params</code></a></li></ul></li><li><a href="#routeraugmentappapp">router.augmentApp(app)</a></li><li><a href="#why">Why</a></li><li><a href="#license">License</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/common-docs/" class="nav-home"><img src="/common-docs/img/docusaurus.svg" alt="common-docs" width="66" height="58"/></a><div><h5>Docs</h5><a href="/common-docs/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/common-docs/docs/en/doc2.html">Guides (or other categories)</a><a href="/common-docs/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/common-docs/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/common-docs/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/common-docs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 magicdawn</section></footer></div></body></html>

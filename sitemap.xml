@@ -3,5 +3,6 @@
 <url> <loc>https://magicdawn.github.io/common-docs/help</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> <xhtml:link rel="alternate" hreflang="en" href="https://magicdawn.github.io/common-docs/en/help" /> </url>
 <url> <loc>https://magicdawn.github.io/common-docs/index</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> <xhtml:link rel="alternate" hreflang="en" href="https://magicdawn.github.io/common-docs/en/index" /> </url>
 <url> <loc>https://magicdawn.github.io/common-docs/users</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> <xhtml:link rel="alternate" hreflang="en" href="https://magicdawn.github.io/common-docs/en/users" /> </url>
+<url> <loc>https://magicdawn.github.io/common-docs/docs/impress-router</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://magicdawn.github.io/common-docs/docs/impress-router" /> </url>
 <url> <loc>https://magicdawn.github.io/common-docs/docs/</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://magicdawn.github.io/common-docs/docs/" /> </url>
 </urlset>
